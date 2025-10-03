@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bài 5 - Máy tính hình chữ nhật</title>
+</head>
+<body>
+<h2>Tính diện tích và chu vi hình chữ nhật</h2>
+
+<form th:action="@{/Bai5Controller/calc}" method="post">
+    <div>
+        <label>Chiều rộng:
+            <input type="text" name="width" th:value="${width}" />
+        </label>
+    </div>
+    <div>
+        <label>Chiều dài:
+            <input type="text" name="length" th:value="${length}" />
+        </label>
+    </div>
+    <div>
+        <button type="submit">Tính</button>
+    </div>
+</form>
+
+<div th:if="${error}">
+    <p th:text="${error}" style="color:red;"></p>
+</div>
+
+<div th:if="${area != null}">
+    <p>Diện tích: <span th:text="${area}"></span></p>
+    <p>Chu vi: <span th:text="${perimeter}"></span></p>
+</div>
+</body>
+</html>

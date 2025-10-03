@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4 Lab2</title>
+</head>
+<body>
+<h2>Form nhập Product</h2>
+
+<form action="/param4/save" method="post" th:object="${p2}">
+    <input th:field="*{name}" placeholder="Tên sản phẩm">
+    <input th:field="*{price}" placeholder="Giá">
+    <button type="submit">Save</button>
+</form>
+
+<hr>
+<h3>Dữ liệu mặc định (p1)</h3>
+<ul>
+    <li th:text="${p1.name}"></li>
+    <li th:text="${p1.price}"></li>
+</ul>
+
+<h3>Dữ liệu nhập từ form (p2)</h3>
+<ul>
+    <li th:text="${p2.name}"></li>
+    <li th:text="${p2.price}"></li>
+</ul>
+
+<h3>Danh sách items</h3>
+<ul>
+    <li th:each="item : ${items}">
+        <span th:text="${item.name}"></span> -
+        <span th:text="${item.price}"></span>
+    </li>
+</ul>
+
+</body>
+</html>
