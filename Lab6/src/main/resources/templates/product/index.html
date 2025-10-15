@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Product Management</title>
+</head>
+<body>
+<h3>PRODUCT MANAGEMENT</h3>
+
+<!-- Gọi file form -->
+<th:block th:replace="~{/product/_form}"></th:block>
+
+<hr>
+
+<!-- Gọi file table -->
+<th:block th:replace="~{/product/_table}"></th:block>
+
+</body>
+</html>
