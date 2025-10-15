@@ -1,0 +1,9 @@
+<form th:object="${item}" action="/product/index" method="post">
+  <input th:field="*{id}" placeholder="product Id?" />
+  <input th:field="*{name}" placeholder="product Name?" />
+  <hr>
+  <button formaction="/product/create">Create</button>
+  <button formaction="/product/update">Update</button>
+  <a th:href="@{|/product/delete/${item.id}|}">Delete</a>
+  <a href="/product/index">Reset</a>
+</form>
